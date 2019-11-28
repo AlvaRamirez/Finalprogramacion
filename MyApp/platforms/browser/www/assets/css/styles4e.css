@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    src: url(nunito.woff2);
+    
+}
+
+
+body{
+    background-color: #111;
+}
+
+#proximamente {
+    width: 90%;
+    text-align: center;
+    /* margin-top: 40%; */
+    margin: 0 auto 7% 4% 52%;
+    margin: 0 auto;
+    padding-top: 14%;
+}
+h1{
+    color: #d48c32;
+}
+
+.alva {
+	border-radius: 11em;
+	padding: 35px;
+	width: 2%;
+	padding-right: 32px;
+	float: left;
+	padding: 0px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	margin-left: 5%;
+	transition: 0.3s;
+	cursor: pointer;
+	margin-left: 2%;
+	position: absolute;
+	left: 3%;
+	top: 8%;
+}
+
+.alva:hover{
+    transform: scale(0.9);
+}
+
+#alvaro {
+    height: 4em;
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .alva {
+        border-radius: 11em;
+        width: 7%;
+        float: left;
+        padding: 0px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-left: 2%;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }
+
+    #proximamente {
+
+        width: 90%;
+        text-align: center;
+        margin-top: 40%;
+        margin: 0 auto 7% 4% 52%;
+        margin: 0 auto;
+        padding-top: 12em;
+    
+    }
+
+}
+
+@media (max-width: 800px) and (orientation: landscape){
+    #proximamente {
+
+        width: 90%;
+        text-align: center;
+        margin-top: 40%;
+        margin: 0 auto 7% 4% 52%;
+        margin: 0 auto;
+        padding-top: 9%;
+    
+    }
+
+   
+        .alva{
+            width: 3%;
+        }
+    
+}

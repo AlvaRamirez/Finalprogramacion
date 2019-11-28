@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario</title>
+    <link rel="icon" href="assets/img/plataforma/r.jpg" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate-min.css">
+
+    <meta charset="UTF-8">
+    <script src="assets/js/jquery-3.4.1.js"></script>
+</head>
+
+<body onload="go();"> 
+  <!-- <div  onclick="reinicio()" id="contalva"><img class="alva" src="assets/img/plataforma/n.jpg"></div>-->
+  <section id="contenedordatos">
+  <div  onclick="reinicio()" id="contalva">
+        <img class="alva" src="assets/img/plataforma/n.jpg">
+     </div>
+ </section>
+
+<div class="animated zoomIn" id="formulario">
+    <form method="post" action="">
+        <div  class="contper">
+       <img onclick="takePicture();" class="perfil" src="assets/img/plataforma/user.png">
+        </div>
+
+        <figure>Jugador 1</figure>
+
+        <p>
+        <input type="text" id="usuario1"name="usuario1" placeholder="Usuario" required> 
+        </p>
+        
+        <p>
+        <input type="text" id="apodo1"name="apodo1" placeholder="Apodo" required> 
+        </p>
+           
+        
+     <button type="button" class="boton" id="perfil1" onclick="validaryguardar(1)">Listo</button>
+        
+    </form>
+</div>
+
+<div id="formulario2" class="animated zoomIn"  style="display: none;">
+        <div class="contper">
+        <form method="post" action="">
+           <img onclick="takePicture();" class="perfil" src="assets/img/plataforma/user.png">
+             </div>
+    
+            <figure>Jugador 2</figure>
+    
+            <p>
+            <input type="text" id="usuario2"name="usuario2" placeholder="Usuario" required> 
+            </p>
+            
+            <p>
+            <input type="text" id="apodo2"name="apodo2" placeholder="Apodo" required> 
+            </p>
+               
+            
+         <button type="button" class="boton" id="perfil2" onclick="validaryguardar(2)">Listo</button>
+            
+        </form>
+    </div>
+
+
+</body>
+    <script src="assets/js/code.js"></script>
+    <script src="assets/js/foto.js"></script>
+</html>

@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    src: url(nunito.woff2);
+    
+}
+
+body {
+    width: 100%;
+    background-color: 
+    #111;
+    background-size: cover;
+    font-family: sans-serif;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+#msgBox div
+{
+    top: 43%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: #fafafa;
+
+    
+}
+
+#msgBox{
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.none
+{
+    display: none;  
+}
+
+#msgBox div{
+    padding: 1em;
+}
+
+#msgBox h3{
+    font-size: 30px;
+    margin-top: 0;
+}
+
+#msgBox p{
+    font-size: 19px;
+}
+
+#winner div{
+    width: 50%;
+    height: 50%;
+    color: white;
+    background-size: cover;
+}
+
+#msgBox div, #winner div {
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: 
+    #262626;
+        background-size: auto;
+}
+
+#msgBox h3{
+    color: white;
+}
+
+.alva {
+	border-radius: 11em;
+	padding: 35px;
+	width: 2%;
+	padding-right: 32px;
+	float: left;
+	padding: 0px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	margin-left: 5%;
+	transition: 0.3s;
+	cursor: pointer;
+	margin-left: 2%;
+	position: absolute;
+	left: 3%;
+	top: 8%;
+}
+
+
+.alva:hover{
+    transform: scale(0.9);
+}
+
+#titulo {
+    text-align: center;
+    font-family: 'nunito', sans-serif;
+    font-weight: 800;
+    color: azure;
+    margin: 0 auto;
+}
+
+.container {
+    width: 50%;
+    height: 70vh;
+    margin: 0 auto;
+    font-size: 25px;
+    font-family: sans-serif;
+    display: grid;
+    gap: 0.3em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 1em;
+    font-family: 'nunito', sans-serif;
+    background-color: #010200e6;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 2px 10px -1px #3d6264;
+    -moz-box-shadow: 0px 2px 10px -1px #3d6264;
+    box-shadow: 0px 2px 10px -1px #000;
+}
+
+.container div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.container div:hover {
+    background-color: rgba(104, 147, 89, 0.041);
+}
+
+.container div.turn1:hover {
+    background-color: rgb(255, 169, 41);
+    transition: all 0.5s ease-out;
+}
+
+.container div.turn2:hover {
+    background-color: rgb(200, 235, 93);
+    transition: all 0.5s ease-out;
+}
+
+img {
+    width: 20px;
+}
+
+#maincontainer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.select-css {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    cursor: pointer;
+    padding: .6em 1.4em .5em .8em;
+    width: 18%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 20px;
+    border: 0px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+        linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    font-family: Nunito, sans-serif;
+
+}
+
+.select-css::-ms-expand {
+    display: none;
+}
+
+.select-css:hover {
+    border-color: #888;
+    opacity: 0.9;
+    border-radius: 0.5em;
+}
+
+.select-css:focus {
+    border-color: #aaa;
+    /*box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);*/
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+.select-css option {
+    font-weight: normal;
+}
+
+#BotonReiniciar {
+    display: block;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    padding: .6em 1.4em .5em .8em;
+    width: 18%;
+    max-width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 20px;
+    border: 1px solid #d48c32;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    font-family: Nunito, sans-serif;
+    background-color: none;
+    background: #d48c32;
+    color: black;
+}
+.container div {
+	width: 99%;
+	height: 99%;
+	text-align: center;
+	/* border-radius: 0.5em; */
+	transition: 0.4s;
+	cursor: pointer;
+}
+
+
+.container div img {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+#turn {
+    color: 
+    white;
+    margin: 0 auto;
+    font-family: Nunito, sans-serif;
+    text-align: center;
+    font-size: 2em;
+}
+
+#BotonReiniciar:hover {
+    opacity: 0.9;
+    border-radius: 0.5em;
+}
+
+#ad {
+    text-align: center;
+    color: azure;
+    font-family: nunito;
+    padding: 10px;
+}
+
+#alinear {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    /* margin-top: 1.5%; */
+}
+
+
+/* FLIP */
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.flip-box.clicked .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front {
+    background-color: #d0d0d0;
+    color: black;
+    /* border: 3px solid white; */
+}
+
+/* Style the back side */
+.flip-box-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#flex-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.jugador {
+    margin: 0 auto;
+    color: white;
+    font-size: 2em;
+    font-family: Nunito;
+}
+
+#jugador1 {
+    color: rgb(255, 169, 41);
+    text-align: center;
+    background-color: #000000e0;
+    padding: 20px;
+}
+
+#jugador2 {
+    color: rgb(200, 235, 93);
+    text-align: center;
+    background-color: #000000e0;
+    padding: 20px;
+}
+
+#points_jug1 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#points_jug2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#winDiv {
+    z-index: 10;
+    top: 20%;
+    width: 35%;
+    height: 450px;
+    /* padding-bottom: 1em; */
+    background-color: rgba(25, 27, 25, 0.91);
+    color: white;
+    position: absolute;
+    left: 33%;
+    -webkit-animation: fadein 1s;
+    transition: 0.3s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#winDiv h1 {
+    font-size: 3em;
+    position: absolute;
+    top: 26%;
+    font-family: Nunito, sans-serif;
+}
+
+#winDiv p {
+    padding: 19%;
+    text-align: center;
+}
+
+#winDiv span {
+    background-color: rgb(36, 37, 36);
+    color: #f7f7f7;
+    /* border-radius: 1em; */
+    padding: 2em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 17%;
+    transition: 0.3s;
+    box-shadow: -1px 2px 22px -2px rgba(0, 0, 0, 0.75);
+    font-family: Nunito, sans-serif;
+}
+
+#winDiv span:hover {
+    background-color: rgb(66, 68, 66);
+    color: #d2d2d2;
+    transform: scale(0.9);
+    font-family: Nunito, sans-serif;
+}
+
+
+/* CLASSES */
+.dissapear {
+
+    display: none;
+}
+
+.appear {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#turn {
+    margin: 0 auto;
+        margin-top: 0px;
+        margin-right: auto;
+    margin-top: 0px;
+    margin-top: 0px;
+    font-family: Nunito, sans-serif;
+    text-align: center;
+    margin-top: 2.5%;
+    font-size: 2em;
+    color: 
+    white;
+}
+
+address {
+    text-align: center;
+    color: white;
+    margin-top: 1.3%;
+    font-family: Nunito, sans-serif;
+}
+
+@media (max-width: 600px) {
+
+
+    #msgBox div, #winner div {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background:
+        #262626;
+        width: 60%;
+    }
+
+    #msgBox h3 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    #msgBox button {
+        padding: 7px;
+        margin: 8px;
+    }
+
+    .alva {
+        border-radius: 11em;
+        width: 7%;
+        float: left;
+        padding: 0px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-left: 2%;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }
+
+    #turn {
+        margin: 0 auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-top: 0px;
+        font-family: Nunito, sans-serif;
+        text-align: center;
+        margin-top: 10%;
+        font-size: 1.5em;
+        color: white;
+        margin-left: 5%;
+    }
+
+    .container div img {
+        width: 100%;
+        height: 82%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 11%;
+    }
+
+    .container {
+        width: 100%;
+        height: 48vh;
+        margin: 0 auto;
+        font-size: 25px;
+        font-family: sans-serif;
+        display: grid;
+        gap: 0.3em;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding: 3px;
+        font-family: 'nunito', sans-serif;
+        background-color: #010200e6;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 2px 10px -1px #3d6264;
+        -moz-box-shadow: 0px 2px 10px -1px #3d6264;
+        box-shadow: 0px 2px 10px -1px #000;
+        margin-top: 2.5em;
+    }
+
+    
+#BotonReiniciar{
+    width: 100%;
+    }
+
+    .select-css{
+        width: 100%;
+        }
+        #alinear {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+                margin-top: 0px;
+            margin-top: 0px;
+            margin-top: 1.5em;
+            justify-content: center;
+        }
+    
+    
+}
+
+@media (max-width: 800px) and (orientation: landscape){
+
+
+    #msgBox div, #winner div {
+        top: 51%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: absolute;
+background:
+#262626;
+    background-size: auto;
+background-size: auto;
+    }
+
+    #msgBox h3 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    #msgBox button {
+        padding: 7px;
+        margin: 8px;
+    }
+    .container {
+        width: 50%;
+        height: 70vh;
+        margin: 0 auto;
+            margin-top: 0px;
+        margin-top: 0px;
+        font-size: 25px;
+        font-family: sans-serif;
+        display: grid;
+        gap: 0.3em;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding: 1em;
+        font-family: 'nunito', sans-serif;
+        background-color: 
+    #010200e6;
+    color:
+    white;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 2px 10px -1px #3d6264;
+    -moz-box-shadow: 0px 2px 10px -1px #3d6264;
+    box-shadow: 0px 2px 10px -1px
+        #000;
+        margin-top: 1%;
+    }
+
+    #turn {
+        margin: 0 auto;
+            margin-top: 0px;
+            margin-right: auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-top: 0px;
+        font-family: Nunito, sans-serif;
+        text-align: center;
+        margin-top: 2.5%;
+        font-size: 1em;
+        color: 
+        white;
+        float: right;
+        top: 40%;
+        left: 80%;
+        width: 100%;
+    }
+
+.select-css {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: 
+#444;
+line-height: 1.3;
+cursor: pointer;
+padding: .6em 1.4em .5em .8em;
+width: 15%;
+max-width: 100%;
+box-sizing: border-box;
+margin: 20px;
+border: 0px solid
+#aaa;
+    border-top-color: rgb(170, 170, 170);
+    border-right-color: rgb(170, 170, 170);
+    border-bottom-color: rgb(170, 170, 170);
+    border-left-color: rgb(170, 170, 170);
+box-shadow: 0 1px 0 1px
+rgba(0, 0, 0, .04);
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+background-color:
+#fff;
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom,
+#ffffff 0%,
+    #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    font-family: Nunito, sans-serif;
+    position: absolute;
+    left: 1%;
+    top: 77%;
+}
+#BotonReiniciar {
+    display: block;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    padding: .6em 1.4em .5em .8em;
+    width: 15%;
+    max-width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 20px;
+    border: 1px solid 
+#d48c32;
+box-shadow: 0 1px 0 1px
+rgba(0, 0, 0, .04);
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+background-color: #fff;
+text-align: center;
+outline: none;
+transition: 0.3s;
+font-family: Nunito, sans-serif;
+background-color: none;
+background:
+#d48c32;
+color:
+    black;
+    position: absolute;
+    left: 79.5%;
+    top: 76%;
+}
+
+    .alva{
+        width: 3%;
+    }
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Memotest</title>
+    <link rel="icon" href="assets/img/plataforma/r.jpg" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesMemo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate-min.css">
+    <meta charset="UTF-8">
+    <script src="assets/js/jquery-3.4.1.js"></script>
+</head>
+
+<body >
+    
+    <div   onclick="actualizarPuntajes();" id="contalva">
+        <img class="alva" src="assets/img/plataforma/back.png">
+     </div>
+    <div id="winDiv" class="dissapear"></div>
+    <div id="maincontainer">
+            <!--<div  onclick="reinicio()" id="alvaro"><img class="alva" src="assets/img/plataforma/n.jpg"></div>-->
+          
+        <div  id="flex-box">
+            <!-- <div id="jugador1" class="jugador">Jugador 1:
+                <p id="points_jug1">0</p>-->
+            </div>
+            <h3 id="turn">Selecciona un tablero</h3>
+            <div  class="container">
+                
+            </div>
+            <div id="msgBox" class="none">
+            </div>
+           <!-- <div id="jugador2" class="jugador"> Jugador 2:
+                <p id="points_jug2">0</p>-->
+            </div>
+        </div>
+
+        <div id="alinear">
+                <select required class="select-css" id="selectSize" name="selectSize" onchange="drawBoard(this)">
+                    <option value="" hidden>Seleccionar</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                    <option value="6">6x6</option>
+                </select>
+                
+                <button id="BotonReiniciar" onclick="areYouSure();">Reiniciar</button>
+            </div>
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/codeMemo.js"></script>
+</body>
+
+</html>
