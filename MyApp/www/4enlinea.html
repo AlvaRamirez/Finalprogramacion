@@ -6,19 +6,89 @@
     <link rel="icon" href="assets/img/plataforma/r.jpg" type="image/png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/styles4e.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/animate-min.css">
-    <meta charset="UTF-8">
     <script src="assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/animate-min.css">
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <meta charset="UTF-8">
+    
 </head>
 
 <body>
         <div  onclick="reinicio()" id="alvaro"><img class="alva" src="assets/img/plataforma/back.png"></div>
-   
-        <div class="animated bounceIn" id="proximamente">
-            <h1>Proximamente :'(</h1>
-    </div>
+        <main>
+
+<!--El 4 en linea solo se juega de una forma-->
+
+<h3 id="turn">Turno de: </h3>
+    <section id="container">
+            <div class="tablero">
+                <div  class="col btn btn2" id=col-uno data-columna="0">
+                    <div class="casillero " id="cas-0-1"></div>
+                    <div class="casillero" id="cas-0-2"></div>
+                    <div class="casillero" id="cas-0-3"></div>
+                    <div class="casillero" id="cas-0-4"></div>
+                    <div class="casillero" id="cas-0-5"></div>
+                    <div class="casillero" id="cas-0-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-dos data-columna="1">
+                    <div class="casillero" id="cas-1-1"></div>
+                    <div class="casillero" id="cas-1-2"></div>
+                    <div class="casillero" id="cas-1-3"></div>
+                    <div class="casillero" id="cas-1-4"></div>
+                    <div class="casillero" id="cas-1-5"></div>
+                    <div class="casillero" id="cas-1-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-tres data-columna="2">
+                    <div class="casillero" id="cas-2-1"></div>
+                    <div class="casillero" id="cas-2-2"></div>
+                    <div class="casillero" id="cas-2-3"></div>
+                    <div class="casillero" id="cas-2-4"></div>
+                    <div class="casillero" id="cas-2-5"></div>
+                    <div class="casillero" id="cas-2-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-cuatro data-columna="3">
+                    <div class="casillero" id="cas-3-1"></div>
+                    <div class="casillero" id="cas-3-2"></div>
+                    <div class="casillero" id="cas-3-3"></div>
+                    <div class="casillero" id="cas-3-4"></div>
+                    <div class="casillero" id="cas-3-5"></div>
+                    <div class="casillero" id="cas-3-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-cinco data-columna="4">
+                    <div class="casillero" id="cas-4-1"></div>
+                    <div class="casillero" id="cas-4-2"></div>
+                    <div class="casillero" id="cas-4-3"></div>
+                    <div class="casillero" id="cas-4-4"></div>
+                    <div class="casillero" id="cas-4-5"></div>
+                    <div class="casillero" id="cas-4-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-seis data-columna="5">
+                    <div class="casillero" id="cas-5-1"></div>
+                    <div class="casillero" id="cas-5-2"></div>
+                    <div class="casillero" id="cas-5-3"></div>
+                    <div class="casillero" id="cas-5-4"></div>
+                    <div class="casillero" id="cas-5-5"></div>
+                    <div class="casillero" id="cas-5-6"></div>
+                </div>
+                <div class="col btn btn2" id=col-siete data-columna="6">
+                    <div class="casillero" id="cas-6-1"></div>
+                    <div class="casillero" id="cas-6-2"></div>
+                    <div class="casillero" id="cas-6-3"></div>
+                    <div class="casillero" id="cas-6-4"></div>
+                    <div class="casillero" id="cas-6-5"></div>
+                    <div class="casillero" id="cas-6-6"></div>
+                </div>
+            </div>
+        </section>
+        </main>
+        <button id="BotonReiniciar" onclick="areYouSure();">Reiniciar</button>
 
 </body>
 
 <script src="assets/js/code4e.js"></script>
+
+<script src="assets/js/jugadores.js"></script>
+
+
+
 </html>

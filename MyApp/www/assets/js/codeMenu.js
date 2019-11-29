@@ -1,4 +1,9 @@
 
+while(puntajeGlobal1|puntajeGlobal2==null|NaN){
+    puntajeGlobal1=0;
+    puntajeGlobal2=0;
+}
+
 var mostrarapodo1=localStorage.getItem("apodo1");
 var mostrarapodo2=localStorage.getItem("apodo2");
 
@@ -8,11 +13,6 @@ var mostrarapodo2=localStorage.getItem("apodo2");
     var puntajeGlobal1= localStorage.getItem("puntajeGlobal1");
     var puntajeGlobal2= localStorage.getItem("puntajeGlobal2");
 
-if(puntajeGlobal1|puntajeGlobal2==null|NaN){
-    puntajeGlobal1=0;
-    puntajeGlobal2=0;
-
-}
 
        function go(){
   

@@ -54,14 +54,6 @@ navigator.camera.getPicture(function(imageData2){
     
 });
 
-/*function onSuccess(picData2) {
-    document.getElementById("foto2");
-    image2.src="data:image/jpeg;base64,"+picData2;
-}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}*/
 
 },
 
@@ -71,13 +63,13 @@ function onFail(message) {
     document.getElementById("foto1").setAttribute("disabled","disabled"); 
 
 
-navigator.camera.getPicture(function(imageData2){
+navigator.camera.getPicture(function(imageData1){
     //foto tomada OK
 
     document.getElementById("foto1").removeAttribute("disabled");
 
-    app.updatePicture2(imageData2);
-    localStorage.setItem("myapp-photo1", imageData2);
+    app.updatePicture2(imageData1);
+    localStorage.setItem("myapp-photo1", imageData1);
 
 }, function(){
     //foto NO tomada
@@ -92,13 +84,7 @@ navigator.camera.getPicture(function(imageData2){
 
     
 });
-/*function onSuccess(picData1) {
-    document.getElementById("foto2");
-    image1.src="data:image/jpeg;base64,"+picData1;
-}
-function onFail(message) {
-    alert('Failed because: ' + message);
-}*/
+
 },
 
 updatePicture1: function(picData1){
@@ -110,6 +96,7 @@ updatePicture1: function(picData1){
 updatePicture2: function(picData2){
     var image2= document.getElementById("foto2");
     image2.src="data:image/jpeg;base64,"+picData2;
+    console.log(image2)
 }
 
 };

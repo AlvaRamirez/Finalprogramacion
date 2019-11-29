@@ -8,14 +8,12 @@ var mostrarapodo2=localStorage.getItem("apodo2");
     var puntajeGlobal1= localStorage.getItem("puntajeGlobal1");
     var puntajeGlobal2= localStorage.getItem("puntajeGlobal2");
 
-/*while(puntajeGlobal1|puntajeGlobal2==null|NaN){
+/*if(puntajeGlobal1|puntajeGlobal2==null|NaN){
     puntajeGlobal1=0;
     puntajeGlobal2=0;
 
 }
 */
-
-
        function go(){
   
             console.log("puntaje total1:" + puntajeGlobal1);
