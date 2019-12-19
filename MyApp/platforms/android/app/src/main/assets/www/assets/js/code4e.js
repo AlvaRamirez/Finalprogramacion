@@ -190,9 +190,16 @@ function chequearGanador() {
         {          
    
             score4l [0]= score4l [0] + 100;
+             setTimeout (function(){
 
-            $("#container").append('<div id="winner" class="none"></div>');
-            $("#winner").removeClass("none");
+                $("#container").append('<div id="winner" class="none"></div>');
+                $("#winner").removeClass("none");
+                
+             },3000);
+               
+            
+           
+
             console.log( jugador1 + ": "+ score4l [0]);
             $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
         }
@@ -204,9 +211,6 @@ function chequearGanador() {
             $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
         }
         $("#handPlayer").remove();
-
-
-    
 
         return ganador;
     }
