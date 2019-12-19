@@ -193,14 +193,15 @@ function chequearGanador() {
             $("#container").append('<div id="winner" class="none"></div>');
             $("#winner").removeClass("none");
             console.log( jugador1 + ": "+ score4l [0]);
-            $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
+            $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="actualizarPuntajes();vaciarTablero()">Salir</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
         }
         else
         {
             score4l [1]= score4l [1] + 100;
 
             console.log( jugador2 +  ": " + score4l [1]);
-            $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
+            $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="actualizarPuntajes();vaciarTablero()">Salir</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
+          
         }
         $("#handPlayer").remove();
 

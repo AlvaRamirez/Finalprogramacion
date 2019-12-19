@@ -181,6 +181,7 @@ function chequearGanador() {
     var ganador = chequearStringFichas(textoColumnas);
  
     // SI HAY GANADOR TERMINO
+    
     if (ganador != null) {
         console.log(ganador);
 
