@@ -10,10 +10,16 @@
     display: none;  
 }
 
-#test{
-    width: 4%;position: absolute;left: 92%;top: 10%;font-size: 10px;
+#test {
+    width: 44%;
+    position: absolute;
+    left: 56%;
+    top: 5%;
+    font-size: 10px;
+    opacity: 0%;
+    outline: none;
+    height: 40px;
 }
-
 .alva {
 	border-radius: 11em;
 	padding: 35px;
@@ -293,7 +299,7 @@ img{
 
 .pointingActive:hover
 {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(14, 14, 14, 0.04);
 }
 
 .dontClick
@@ -477,6 +483,12 @@ button:hover {
 
 @media (max-width: 600px) {
 
+
+
+    .pointingActive:active
+{
+    background-color: rgba(14, 14, 14, 0.04);
+}
 
     #winner div {
 

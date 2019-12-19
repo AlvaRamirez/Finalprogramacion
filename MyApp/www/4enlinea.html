@@ -14,12 +14,17 @@
 </head>
 
 <body>
-        <div  onclick="reinicio()" id="alvaro"><img class="alva" src="assets/img/plataforma/back.png"></div>
+        <div  onclick="actualizarPuntajes()" id="alvaro"><img class="alva" src="assets/img/plataforma/back.png"></div>
         <main>
 
-<!--El 4 en linea solo se juega de una forma-->
+              <!-- <section id="section-rotar">
+                        <p>Rote la pantalla por favor.</p>
+                    </section>--> 
 
-<h3 id="turn">Turno de: </h3>
+<h3 id="turn">A jugar!</h3>
+
+<div id="msgBox" class="none">
+</div>
     <section id="container">
             <div class="tablero">
                 <div  class="col btn btn2" id=col-uno data-columna="0">
@@ -88,6 +93,7 @@
 <script src="assets/js/code4e.js"></script>
 
 <script src="assets/js/jugadores.js"></script>
+
 
 
 

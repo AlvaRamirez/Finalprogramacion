@@ -6,18 +6,25 @@
     <link rel="icon" href="assets/img/plataforma/r.jpg" type="image/png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/styles4e.css">
+    <script src="assets/js/jquery-3.4.1.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/animate-min.css">
+    <script src="assets/js/jquery-3.3.1.js"></script>
     <meta charset="UTF-8">
     
 </head>
 
 <body>
-        <div  onclick="reinicio()" id="alvaro"><img class="alva" src="assets/img/plataforma/back.png"></div>
+        <div  onclick="actualizarPuntajes()" id="alvaro"><img class="alva" src="assets/img/plataforma/back.png"></div>
         <main>
 
-<!--El 4 en linea solo se juega de una forma-->
+              <!-- <section id="section-rotar">
+                        <p>Rote la pantalla por favor.</p>
+                    </section>--> 
 
+<h3 id="turn">A jugar!</h3>
 
+<div id="msgBox" class="none">
+</div>
     <section id="container">
             <div class="tablero">
                 <div  class="col btn btn2" id=col-uno data-columna="0">
@@ -84,7 +91,10 @@
 </body>
 
 <script src="assets/js/code4e.js"></script>
-<script src="assets/js/jquery-3.4.1.js"></script>
+
+<script src="assets/js/jugadores.js"></script>
+
+
 
 
 </html>

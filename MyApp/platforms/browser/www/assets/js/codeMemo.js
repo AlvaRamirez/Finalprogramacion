@@ -46,19 +46,15 @@ var disableAll = false;
 var container = $(".container");
 
 function actualizarPuntajes(){
-
-    location.href="menu.html";
-
-    localStorage.setItem("puntajeGlobal1",scorememo[0]);
-    localStorage.setItem("puntajeGlobal2",scorememo[1]);
-  
-    scorememo[0]=JSON.stringify(scorememo[0]);
-    scorememo[1]=JSON.stringify(scorememo[1]);
-
-    //puntajeGlobal1=JSON.stringify(puntajeGlobal1);
-    //puntajeGlobal2=JSON.stringify(puntajeGlobal2);
-   
+    var puntajeJ1 = parseInt(localStorage.getItem("puntajeGlobal1"));
+    var puntajeJ2 = parseInt(localStorage.getItem("puntajeGlobal2"));
+    
+    localStorage.setItem("puntajeGlobal1",puntajeJ1 + scorememo[0]);
+    localStorage.setItem("puntajeGlobal2",puntajeJ2 + scorememo[1]);
+    
+    location.href ="menu.html";
 }
+
 
 function drawBoard(selectedSize) {
     //asigna a la variable boardsize la longitud del tablero elegida por el usuario
@@ -128,8 +124,8 @@ function clickTile(divId) {
             console.log("Pares J1: ", player1.pairs, "Pares J2: ", player2.pairs);
            // playerTurn.points += turnsInARow * 100;
             console.log("Puntos J1: ", player1.points, "Puntos J2: ", player2.points);
-            $("#points_jug1").text(JSON.stringify(player1.points));
-            $("#points_jug2").text(JSON.stringify(player2.points));
+           $("#points_jug1").text(JSON.stringify(player1.points));
+           $("#points_jug2").text(JSON.stringify(player2.points));
 
             //Resets "click" variables for another move
             click1 = null;

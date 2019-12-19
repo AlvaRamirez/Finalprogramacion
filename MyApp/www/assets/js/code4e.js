@@ -3,13 +3,20 @@ function reinicio(){
     
 }
 
-//jugadores[0].primeravez = 2;
+var jugador1= localStorage.getItem("apodo1");
+var jugador2= localStorage.getItem("apodo2");
 
-//COSAS DEL JUEGO
+
+//JUEGO
+var score4l=[0,0];
+var player= 0; // 0 = X | 1 = O
 var jugadorActual;
 var altura = 6;
 var columnas;
+var turn = true;
+var h3Turn = $("#turn");
 
+var turnsInARow = 0;
 var tamanoFicha = 50;
 var ganador;
 var lugaresLibres;
@@ -32,13 +39,44 @@ function vaciarTablero() {
     $("#jugadordos").html(jugadores[1].apodo);
     $("mensaje").addClass("hide");
     turnoColor();
+    $("#msgBox").empty();
+    $("#msgBox").addClass("none");
+    $("#msgBox").removeClass("sureAbout");
+    $("#winner").empty();
+    $("#winner").addClass("none");
+
+}
+
+
+function actualizarPuntajes(){
+    var puntajeJ1 = parseInt(localStorage.getItem("puntajeGlobal1"));
+    var puntajeJ2 = parseInt(localStorage.getItem("puntajeGlobal2"));
+    
+    localStorage.setItem("puntajeGlobal1",puntajeJ1 + score4l[0]);
+    localStorage.setItem("puntajeGlobal2",puntajeJ2 + score4l[1]);
+    
+    location.href ="menu.html";
+}
+
+
+function areYouSure()
+{
+    $("#msgBox").removeClass("none");
+     $("#msgBox").append('<div><h3>¿Seguro que quieren reiniciar?</h3><button onclick="vaciarTablero()">Sí, deseamos reiniciar</button><button onclick="msgBoxDone2()">No, queremos seguir jugando</button></div>');
+    $("#msgBox").addClass("sureAbout");
+}
+
+
+
+function msgBoxDone2(num)
+{
+    $("#msgBox").addClass("none");
 }
 
 function ponerFicha(col) {
 
-    // SI ME QUEDA ESPACIO
     if (columnas[col].length < altura && ganador === null) {
-        // PONGO LA FICHA
+//fichas
         columnas[col].push(jugadorActual);
         var casilleroCompletado = columnas[col].length - 1;
         lugaresLibres--;
@@ -70,6 +108,13 @@ function obtenerClaseFicha(jugadorActual) {
 }
 
 function cambiarTurno() {
+    turn = !turn;
+    if (turn) {
+        h3Turn.text("Turno de: " + jugador1);
+    } else {
+        h3Turn.text("Turno de: " + jugador2);
+    }
+
     if (jugadorActual === 0) {
         jugadorActual = 1;
         turnoColor();
@@ -79,13 +124,14 @@ function cambiarTurno() {
     }
 }
 
+
 function chequearGanador() {
 
     // VERIFICAR VERTICALES
     var textoColumnas = [];
     var ganador = null;
     for (var i = 0; i < columnas.length; i++) {
-        // CONVIERTO EN UN STRING
+        // CONVIERTO EN UN STRING (son para ser identificadas, luego las paso a num)
         var textoColumna = columnas[i].join("");
         textoColumnas.push(textoColumna);
     }
@@ -96,7 +142,7 @@ function chequearGanador() {
     cantFilas = altura;
 
 
-    // RECORRO LAS COLUMNAS, DIAGONALES QUE PARTEN EN UN CASILLERO DE ARRIBA
+    //DIAGONALES DE ARRIBA
     for (var i = 0; i < cantCols; i++) {
         // POSICION DE ARRANQUE PARA CADA VUELTA
         var col = i,
@@ -104,14 +150,14 @@ function chequearGanador() {
         textoColumnas.push(obtenerDiagonal(col, fila, "ascendente"));
     }
 
-    // RECORRO LAS COLUMNAS, DIAGONALES QUE PARTEN EN UN CASILLERO DEL COSTADO IZQUIERDO
+    //DIAGONALES IZQUIERDAS
     for (var i = 0; i < cantFilas; i++) {
         var col = 0,
             fila = i;
         textoColumnas.push(obtenerDiagonal(col, fila, "ascendente"));
     }
 
-    // RECORRO LAS COLUMNAS, DIAGONALES QUE PARTEN EN UN CASILLERO DE ABAJO
+    // DIAGONALES DE ABAJO
     for (var i = 0; i < cantCols; i++) {
         // POSICION DE ARRANQUE PARA CADA VUELTA
         var col = i,
@@ -119,7 +165,7 @@ function chequearGanador() {
         textoColumnas.push(obtenerDiagonal(col, fila, "descendente"));
     }
 
-    // RECORRO LAS COLUMNAS, DIAGONALES QUE PARTEN EN UN CASILLERO DEL COSTADO IZQUIERDO
+    // DIAGONALES IZQUIERDAS
     for (var i = 0; i < cantFilas; i++) {
         var col = 0,
             fila = i;
@@ -133,13 +179,42 @@ function chequearGanador() {
     }
 
     var ganador = chequearStringFichas(textoColumnas);
+ 
     // SI HAY GANADOR TERMINO
     if (ganador != null) {
+        console.log(ganador);
+
+
+        if(player == 0)
+        {          
+   
+            score4l [0]= score4l [0] + 100;
+
+            $("#container").append('<div id="winner" class="none"></div>');
+            $("#winner").removeClass("none");
+            console.log( jugador1 + ": "+ score4l [0]);
+            $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
+        }
+        else
+        {
+            score4l [1]= score4l [1] + 100;
+
+            console.log( jugador2 +  ": " + score4l [1]);
+            $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="vaciarTablero()">Jugar de nuevo</button></div>');
+        }
+        $("#handPlayer").remove();
+
+
+    
+
         return ganador;
     }
-    // SI LLEGUE HASTA ACA ES PORUQUE NO HAY GANADOR
+    // Empate (podria ir alert)
     return null;
+    
 }
+
+
 
 // EN BASE A UN ARRAY DE TEXTOS DE FICHAS BUSCO EL PATRO GANADOR
 function chequearStringFichas(stringsDeFichas) {
@@ -157,7 +232,7 @@ function chequearStringFichas(stringsDeFichas) {
     return null;
 }
 
-// FUNCION QUE DA EL STRING ARMADO DE LA DIAGONAL
+//ARMADO DE LA DIAGONAL
 function obtenerDiagonal(col, fila, direccion) {
     // LE AGREGA LO QUE VA ENCONTRANDO 
     var diagonal = "";
@@ -176,11 +251,11 @@ function obtenerDiagonal(col, fila, direccion) {
         switch (direccion) {
             case "ascendente":
                 col++;
-                fila++; //0-0 1-1 2-2 ETC 
+                fila++; 
                 break;
             case "descendente":
                 col++;
-                fila--; //0-6 1-5 2-4 3-3 4-2.. ETC 
+                fila--; 
                 break;
             case "horizontal":
                 col++;
@@ -191,7 +266,7 @@ function obtenerDiagonal(col, fila, direccion) {
     return diagonal;
 }
 
-//COSAS DEL DOM
+//DOM
 
 jQuery(function ($) {
 
@@ -200,19 +275,17 @@ jQuery(function ($) {
 
         var claseFicha = obtenerClaseFicha(jugadorActual);
 
-        // TOMO EL ATRIBUTO DATA-COLUMNA DE LA COLUMNA CLICKEADA
         var numeroColumna = $(this).data("columna");
 
         console.log("click en columna", numeroColumna);
 
-        // CONVIERTO EL TEXTO A NUMERO
+        // las paso a numero para ser identificacles como tal
         numeroColumna = parseInt(numeroColumna);
 
-        // PONGO LA FICHA EN EL CASILLERO QUE CORRESPONDE
         var casilleroCompletado = ponerFicha(numeroColumna);
         console.log("casilleroCompletado", casilleroCompletado);
 
-        // SI CASILLERO HUBO LUGAR EN EL TABLERO
+        // para que no se pisen
         if (casilleroCompletado != null) {
 
             // CREO LA FICHA
@@ -227,7 +300,7 @@ jQuery(function ($) {
             // AGREGO FICHA EN LA COLUMNA
             $casillero.append($ficha);
 
-            // ANIMO LA CAIDA DE LA FICHA
+            //Animacion (la cual esta disponible en versiones anteriores de JQ)
 
             $ficha.css("marginTop", -350).animate({
                 "marginTop": 0
@@ -235,15 +308,15 @@ jQuery(function ($) {
                 duration: 250,
                 complete: function () {
                     if (ganador !== null) {
-                        // FIN POR GANADOR
-                        jugadores[ganador].puntaje += 60;
+                        // cuando hay GANADOR
+                        jugadores[ganador].puntaje += 100;
                         $("#mensaje").removeClass("hide");
                         $("#mensaje-p").html("Ganador " + jugadores[ganador].apodo);
                         guardarJugadores();
                     } else if (lugaresLibres === 0) {
-                        // FIN POR EMPATE
-                        jugadores[0].puntaje += 30;
-                        jugadores[1].puntaje += 30;
+                        // cuando EMPATE
+                        jugadores[0].puntaje += 0;
+                        jugadores[1].puntaje += 0;
                         $("#mensaje").removeClass("hide");
                         $("#mensaje-p").html("Empate");
                         guardarJugadores();

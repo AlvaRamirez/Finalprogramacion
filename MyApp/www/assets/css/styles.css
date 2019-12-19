@@ -166,6 +166,45 @@ background-color:
     opacity: 0.9;
 }
 
+.cordova-camera-capture {
+    position: absolute !important;
+    top: 42% !important;
+    z-index: 999 !important;
+    -webkit-box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75)!important;
+    -moz-box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75)!important;
+    box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75)!important;
+left: 40% !important;
+text-align: center !important;
+margin: 0 auto !important;
+justify-content: center !important;
+align-content: center !important;
+display: grid !important;
+background:
+    black !important;
+}
+
+.cordova-camera-capture button{
+    width: 40%!important;
+
+text-align: center!important;
+
+margin: 0 auto!important;
+
+    margin-top: 0px!important;
+
+margin-top: 5%!important;
+
+color:
+white!important;
+
+background:
+#d48c32!important;
+
+border: 0px!important;
+
+padding: 10px!important;
+}
+
 #registro{
     background: none;
     font-size: 20px;
@@ -232,6 +271,7 @@ background-color:
         -webkit-user-select: none;
         -ms-user-select: none;
         transition: 0.3s;
+      /*solo si uso el emulador  height: 160px;*/
 }
 
 .perfil:hover{
@@ -438,6 +478,77 @@ user-select: none;
 }
 
 @media (max-width: 600px) {
+
+    #test {
+        width: 100%;
+        position: absolute;
+        left: 56%;
+        top: 5%;
+        font-size: 10px;
+        opacity: 0%;
+        outline: none;
+        height: 40px;
+    }
+    #registro{
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.8s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      #registro{
+        color: #d48c32;
+      }
+      
+      #registro:active{
+        color: #fff;
+      }
+      #registro::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: #d48c32;
+        z-index: -1;
+        transition: 0.8s;
+      }
+      
+      .btn1::before,.btn3::before{
+        top: 0;
+        border-radius: 0 0 50% 50%;
+      }
+      #registro::before,.btn4::before{
+        bottom: 0;
+        border-radius: 50% 50% 0 0;
+      }
+      .btn3::before,.btn4::before{
+        height: 180%;
+      }
+      .btn1:active::before,#registro:active::before{
+        height: 180%;
+      }
+      .btn3:active::before,.btn4:active::before{
+        height: 0%;
+      }
+
+    .cordova-camera-capture {
+        position: absolute !important;
+        top: 42% !important;
+        z-index: 999 !important;
+        -webkit-box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75) !important;
+        -moz-box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75) !important;
+        box-shadow: 0px 0px 144px 200px rgba(0,0,0,0.75) !important;
+        left: 4% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
+        align-content: center !important;
+        display: grid !important;
+        background: black !important;
+    }
     
     #cont {
         display: block;
@@ -666,7 +777,10 @@ user-select: none;
   }
 
   @media (max-width: 800px) and (orientation: landscape){
-
+#principio{
+        margin-top: -3%;
+    
+}
 
 #contalva{
     display: none;
@@ -762,6 +876,7 @@ user-select: none;
 
     
     }
+
 
     #formulario2 {
         text-align: center;

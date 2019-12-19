@@ -6,42 +6,80 @@ var jugador1= localStorage.getItem("apodo1");
 var jugador2= localStorage.getItem("apodo2");
 
 
-
-
 var count = 1;
 var player= 0; // 0 = X | 1 = O
 var tableGame = [ [-1, -2, -3], [-4, -5, -6], [-7, -8, -9]];
 //var winPl1 = 0;
 //var winPl2 = 0;
+var turn = true;
+var h3Turn = $("#turn");
+var turnsInARow = 0;
 var scorettt=[0,0];
 var flagGaming = true; //Si alguien gana, que no se pueda hacer más clicks en el tablero pasandolo a FALSE
 var winnerCells = []; //Cuando un jugador gana, sus celdas ganadoras se colorean
 var savingCells = [];
 
-var turn = true;
-var h3Turn = $("#turn");
+function actualizarPuntajes(){
+    var puntajeJ1 = parseInt(localStorage.getItem("puntajeGlobal1"));
+    var puntajeJ2 = parseInt(localStorage.getItem("puntajeGlobal2"));
+    
+    localStorage.setItem("puntajeGlobal1",puntajeJ1 + scorettt[0]);
+    localStorage.setItem("puntajeGlobal2",puntajeJ2 + scorettt[1]);
+    
+    location.href ="menu.html";
+}
+
+
+console.log(scorettt[0]);
+console.log(scorettt[1]);
+
+function clickTile() {
+    //If a move is being made, no tiles can be clicked
+    var playerTurn;
+    if (turn) {
+        playerTurn = jugador1;
+    } else {
+        playerTurn = jugador2;
+    }
+            //Resets "click" variables for another move
+            click1 = null;
+            click2 = null;
+        } 
+                //change turn
+
+              /*  turn = !turn;
+                if (turn) {
+                    h3Turn.text("Turno de: " + jugador1);
+                } else {
+                    h3Turn.text("Turno de: " + jugador2);
+                }*/
+
 
 
 function actualizarPuntajes(){
 
-    location.href="menu.html";
-
-
+        location.href="menu.html";
 
     localStorage.setItem("puntajeGlobal1",scorettt[0]);
     localStorage.setItem("puntajeGlobal2",scorettt[1]);
   
     scorettt[0]=JSON.stringify(scorettt[0]);
     scorettt[1]=JSON.stringify(scorettt[1]);
+  
+    
 
-  //  puntajeGlobal1=JSON.stringify(puntajeGlobal1);
-    //puntajeGlobal2=JSON.stringify(puntajeGlobal2);
-    
-    
 }
 
-function loadLocalStorage()
-{
+function loadLocalStorage(){
+
+   //localStorage.setItem('gameClean', 'true');
+   //localStorage.setItem('clickTtt', 'true');
+   //localStorage.removeItem('matrixPos');
+
+    //scorettt[0] = 0;
+    //scorettt[1] = 0;
+    //showPoints();
+
     if(localStorage.length > 0)
     {
 
@@ -50,8 +88,8 @@ function loadLocalStorage()
         //turn
         player= parseInt(localStorage.getItem('playerTurnTtt'));
 
-        if(localStorage.getItem('gameClean') != 'true')
-        {
+       if(localStorage.getItem('gameClean') != 'true')
+     {
             flagGaming= localStorage.getItem('clickTtt');
             if(flagGaming == 'true')
             {
@@ -63,7 +101,7 @@ function loadLocalStorage()
                 winnerCells = localStorage.getItem('cellsWinTtt');
                 winnerCells = winnerCells.split(',');
             }
-        }
+       }
         //table
         savingCells = localStorage.getItem('matrixPos');
         if(savingCells !== "undefined" && savingCells !== null)
@@ -71,7 +109,7 @@ function loadLocalStorage()
             savingCells = savingCells.split(',');
             reloadTableData();
         }
-    }
+   }
     buildGame();
 }
 
@@ -115,9 +153,6 @@ function msgBoxDone1(num)
 function msgBoxDone2(num)
 {
     $("#msgBox").addClass("none");
-
-
-   // restartGame();
 }
 
 function buildButtons()
@@ -201,14 +236,14 @@ function generateCol(row)
     return txt;
 }
 
-function restartGame(num)
+
+function restartGame()
 {
-    if(num==1)
-    {
+   
         localStorage.setItem('clickTtt', 'true');
         localStorage.setItem('gameClean', 'true');
         localStorage.removeItem('matrixPos');
-    }
+    
     localStorage.removeItem('cellsWinTtt');
     flagGaming = true;  
     $("#ttt").empty();
@@ -349,10 +384,9 @@ function validateWin()
         //Player winner! *claps claps*
         paintCellsWin();
         if(player == 0)
-        {
-            //LOCALSTORAGE: Podríamos meter aquí los localStorage de victorias de jugadores
+        {          
+   
             scorettt [0]= scorettt [0] + 50;
-            //scorettt[0]=JSON.stringify(scorettt[0]);
             //loadLocalStorage.setItem();
             console.log( jugador1 + ": "+ scorettt [0]);
             $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="restartGame(1)">Jugar de nuevo</button></div>');
@@ -398,6 +432,13 @@ function restartPoints()
 
 function changePlayer()
 {
+
+    turn = !turn;
+    if (turn) {
+        h3Turn.text("Turno de: " + jugador1);
+    } else {
+        h3Turn.text("Turno de: " + jugador2);
+    }
     if(player == 0)
     {
        $("#handPlayer").removeClass('pointing1');

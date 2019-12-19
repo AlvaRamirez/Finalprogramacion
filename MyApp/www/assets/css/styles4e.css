@@ -71,7 +71,9 @@ h1{
     align-items: center;
 }
 
-
+#section-rotar{
+        display: none;
+}
 .tablero {
     display: flex;
     z-index: 2;
@@ -94,6 +96,70 @@ h1{
     font-size: 2em;
     color: 
     white;
+}
+
+.none{
+    display: none;
+}
+.aparece{
+    display: block;
+}
+#msgBox, #winner
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 99;
+
+}
+
+#msgBox div, #winner div {
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: 
+    #262626;
+        background-size: auto;
+        padding: 2em;
+}
+#winner div {
+    width: 50%;
+    height: 50%;
+    color: 
+    white;
+    background-size: cover;
+    z-index: 99;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#winner button{
+    margin: 0;
+    position: absolute;
+    bottom: 4em;
+    transform: inherit;
+    /*font-size: 0.5em;*/
+}
+#winner h3{
+    color: white;
+}
+#msgBox h3 {
+    font-size: 30px;
+    margin-top: 0;
+    color: white;
+}
+#winner button:last-child
+{
+    bottom: 0em;
+   /* font-size: 1em;*/
+}
+
+#winner div p{
+    font-size: 40px;
 }
 
 #BotonReiniciar {
@@ -236,12 +302,151 @@ h1{
     width: 100%;
     height: 0%;
   }
-  .btn2:hover::before{
+  .btn2:active::before{
     height: 100%;
   }
   
 
 @media (max-width: 600px) {
+
+    #msgBox div, #winner div {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background: 
+        #262626;
+        padding: 1em;
+        width: 60%;
+        text-align: center;
+    }
+
+    #msgBox div, #winner div {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background: 
+        #262626;
+        padding: 1em;
+        width: 60%;
+    }
+
+    #msgBox div {
+
+        padding: 1em;
+    
+    }
+
+
+    #msgBox h3 {
+
+        font-size: 20px;
+        margin-top: 0;
+    
+    }
+  #msgBox button {
+    padding: 7px;
+    margin: 8px;
+}
+
+    .ficha {
+        width: 75%;
+        height: 70%;
+        z-index: 2;
+    }
+        #turn {
+            margin: 0 auto;
+            margin-top: 0px;
+            margin-right: auto;
+            margin-top: 0px;
+            margin-top: 0px;
+            font-family: Nunito, sans-serif;
+            text-align: center;
+            margin-top: 2.5%;
+            font-size: 1.5em;
+            color: white;
+            margin-right: 3%;
+            padding-top: 5%;
+        }
+    
+        #container {
+            width: 100%;
+           /*readaptable si el emulador no funciona */ height: 55vh;
+            margin: 0 auto;
+                margin-top: 0px;
+            margin-top: 0px;
+            font-size: 25px;
+            font-family: sans-serif;
+            gap: 0.3em;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            padding: 0%;
+            font-family: 'nunito', sans-serif;
+            background-color: 
+        #010200e6;
+        color:
+        white;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 2px 10px -1px #3d6264;
+        -moz-box-shadow: 0px 2px 10px -1px #3d6264;
+        box-shadow: 0px 2px 10px -1px
+        #000;
+        margin-top: 2em;
+        display: grid;
+    
+    }
+
+    .alva {
+
+        border-radius: 11em;
+        width: 7%;
+        float: left;
+        padding: 0px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-left: 2%;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        z-index: 99;
+    
+    }
+    .tablero {
+        display: flex;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 7.5em;
+    }
+    .casillero {
+
+        border: 1px solid 
+    
+        white;
+        height: 55px;
+        width: 47px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    
+
+    .btn2:active::before{
+        height: 100%;
+      }
+      
     .alva {
         border-radius: 11em;
         width: 7%;
@@ -270,25 +475,186 @@ h1{
         padding-top: 12em;
     
     }
+    #BotonReiniciar {
+        display: block;
+        font-size: 14px;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: #444;
+        padding: .6em 1.4em .5em .8em;
+        width: 12%;
+        max-width: 100%;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 20px;
+        margin-top: 20px;
+        border: 1px solid #d48c32;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        text-align: center;
+        outline: none;
+        transition: 0.3s;
+        font-family: Nunito, sans-serif;
+        background-color: none;
+        background: #d48c32;
+        color: black;
+        width: 45%;
+        margin-top: 1.5em;
+        justify-content: center;
+        align-content: center;
+        margin: 0 auto;
+        margin-top: 6%;
+    }
 
 }
 
 @media (max-width: 800px) and (orientation: landscape){
-    #proximamente {
 
-        width: 90%;
-        text-align: center;
-        margin-top: 40%;
-        margin: 0 auto 7% 4% 52%;
-        margin: 0 auto;
-        padding-top: 9%;
-    
+    #section-rotar{
+        width: 100%;
+        display: block;
+}
+
+    #msgBox div, #winner div {
+        top: 51%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: absolute;
+background:
+#262626;
+    background-size: auto;
+   
+background-size: auto;
     }
 
+    #winner button {
+        margin: 0;
+        position: absolute;
+        bottom: 3em;
+        transform: inherit;
+        font-size: 1em;
+    }
+
+    #msgBox h3 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    #msgBox button {
+        padding: 7px;
+        margin: 8px;
+    }
    
         .alva{
             width: 3%;
         }
-    
+        
+        #container {
+            width: 50%;
+            height: 70vh;
+            margin: 0 auto;
+                margin-top: 0px;
+            margin-top: 0px;
+            margin-top: 0px;
+            font-size: 25px;
+            font-family: sans-serif;
+            display: grid;
+            gap: 0.3em;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            padding: 1em;
+            font-family: 'nunito', sans-serif;
+            background-color: 
+        #010200e6;
+        color:
+        white;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 2px 10px -1px #3d6264;
+        -moz-box-shadow: 0px 2px 10px -1px #3d6264;
+        box-shadow: 0px 2px 10px -1px
+        #000;
+        margin-top: 1%;
+        }
+
+        .tablero {
+            display: flex;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 5.1em;
+        }
+        
+        
+.casillero {
+    border: 1px solid 
+    white;
+    height: 40px;
+    width: 50px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#turn {
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-top: 0px;
+	font-family: Nunito, sans-serif;
+	text-align: center;
+	margin-top: 2.5%;
+	font-size: 1em;
+	color: white;
+	float: right;
+	top: 40%;
+	left: 80%;
+	width: 100%;
+}
+#BotonReiniciar {
+	display: block;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #444;
+	padding: .6em 1.4em .5em .8em;
+	width: 12%;
+	max-width: 100%;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 20px;
+	border: 1px solid #d48c32;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	text-align: center;
+	outline: none;
+	transition: 0.3s;
+	font-family: Nunito, sans-serif;
+	background-color: none;
+	background: #d48c32;
+	color: black;
+	justify-content: center;
+	margin: 0 auto;
+	/* padding: 20px; */
+	margin-top: 1.5%;
+	position: absolute;
+	top: 82%;
+	left: 82%;
+}
+
 }
 

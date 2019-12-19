@@ -68,7 +68,7 @@ function capture (success, errorCallback, opts) {
 
     video.width = targetWidth;
     video.height = targetHeight;
-    button.innerHTML = 'Capture!';
+    button.innerHTML = 'Tomar Foto!';
 
     button.onclick = function () {
         // create a canvas and capture a frame from video stream

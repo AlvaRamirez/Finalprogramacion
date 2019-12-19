@@ -46,8 +46,8 @@ function validaryguardar(jugador){
             alert ("Complete el Apodo");
         }
 
-      /* else if (document.getElementById("foto1").src.includes("assets/img/plataforma/user.png")) {
-            alert ("Proceda a sacarse la foto");}¨*/
+       /*else if (document.getElementById("foto1").src.includes("assets/img/plataforma/user.png")) {
+            alert ("Proceda a sacarse la foto");}*/
 
         else{
 
@@ -82,8 +82,8 @@ function validaryguardar(jugador){
             alert ("Complete el Apodo");
         }
 
-        else if (document.getElementById("foto2").src.includes("assets/img/plataforma/user.png")) {
-            alert ("Proceda a sacarse la foto");}
+      /* else if (document.getElementById("foto2").src.includes("assets/img/plataforma/user.png")) {
+            alert ("Proceda a sacarse la foto");}*/
 
         else{
 

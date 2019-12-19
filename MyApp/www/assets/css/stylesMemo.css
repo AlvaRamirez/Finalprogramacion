@@ -478,6 +478,19 @@ address {
 
 @media (max-width: 600px) {
 
+    .container div:active {
+        background-color: rgba(104, 147, 89, 0.041);
+    }
+    
+    .container div.turn1:active {
+        background-color: rgb(255, 169, 41);
+        transition: all 0.5s ease-out;
+    }
+    
+    .container div.turn2:active {
+        background-color: rgb(200, 235, 93);
+        transition: all 0.5s ease-out;
+    }
 
     #msgBox div, #winner div {
         top: 40%;

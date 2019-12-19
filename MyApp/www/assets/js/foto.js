@@ -26,6 +26,35 @@ initialize: function(){
         
     },
 
+    takePicture1:function(){
+        console.log("takePicture1");
+    
+        document.getElementById("foto1").setAttribute("disabled","disabled"); 
+    
+    
+    navigator.camera.getPicture(function(imageData1){
+        //foto tomada OK
+    
+        document.getElementById("foto1").removeAttribute("disabled");
+    
+        app.updatePicture1(imageData1);
+        localStorage.setItem("myapp-photo1", imageData1);
+    
+    }, function(){
+        //foto NO tomada
+    
+        document.getElementById("foto1").removeAttribute("disabled");
+    
+        alert("No se puede tomar la foto");
+    }, {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        saveToPhotoAlbum:true
+    
+        
+    });
+    
+    },
 
  takePicture2:function(){
     console.log("takePicture2");
@@ -57,35 +86,7 @@ navigator.camera.getPicture(function(imageData2){
 
 },
 
- takePicture1:function(){
-    console.log("takePicture1");
-
-    document.getElementById("foto1").setAttribute("disabled","disabled"); 
-
-
-navigator.camera.getPicture(function(imageData1){
-    //foto tomada OK
-
-    document.getElementById("foto1").removeAttribute("disabled");
-
-    app.updatePicture2(imageData1);
-    localStorage.setItem("myapp-photo1", imageData1);
-
-}, function(){
-    //foto NO tomada
-
-    document.getElementById("foto1").removeAttribute("disabled");
-
-    alert("No se puede tomar la foto");
-}, {
-    quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL,
-    saveToPhotoAlbum:true
-
-    
-});
-
-},
+ 
 
 updatePicture1: function(picData1){
     var image1= document.getElementById("foto1");
