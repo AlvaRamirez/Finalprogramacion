@@ -211,8 +211,8 @@ h1{
 .ficha {
     width: 75%;
     height: 75%;
-    z-index: 2;
-    border-radius: 2em;
+    z-index: 99;
+    border-radius: 50%;
 }
 .ficha-j0 {
     background: #9f5927;
@@ -351,12 +351,12 @@ h1{
     margin: 8px;
 }
 
-    .ficha {
-        width: 75%;
-        height: 70%;
-        z-index: 2;
-        border-radius: 2em;
-    }
+.ficha {
+    width: 75%;
+    height: 75%;
+    z-index: 99;
+    border-radius: 50%;
+}
         #turn {
             margin: 0 auto;
             margin-top: 0px;
