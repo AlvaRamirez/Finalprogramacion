@@ -212,6 +212,7 @@ h1{
     width: 75%;
     height: 75%;
     z-index: 2;
+    border-radius: 2em;
 }
 .ficha-j0 {
     background: #9f5927;
@@ -354,6 +355,7 @@ h1{
         width: 75%;
         height: 70%;
         z-index: 2;
+        border-radius: 2em;
     }
         #turn {
             margin: 0 auto;
