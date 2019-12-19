@@ -271,7 +271,7 @@ padding: 10px!important;
         -webkit-user-select: none;
         -ms-user-select: none;
         transition: 0.3s;
-        height: 160px;
+      /*solo si uso el emulador  height: 160px;*/
 }
 
 .perfil:hover{
@@ -479,7 +479,16 @@ user-select: none;
 
 @media (max-width: 600px) {
 
-
+    #test {
+        width: 100%;
+        position: absolute;
+        left: 56%;
+        top: 5%;
+        font-size: 10px;
+        opacity: 0%;
+        outline: none;
+        height: 40px;
+    }
     #registro{
         background: none;
         font-size: 20px;
@@ -768,7 +777,10 @@ user-select: none;
   }
 
   @media (max-width: 800px) and (orientation: landscape){
-
+#principio{
+        margin-top: -3%;
+    
+}
 
 #contalva{
     display: none;

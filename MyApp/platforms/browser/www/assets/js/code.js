@@ -12,7 +12,6 @@ function go(){
         
     }
     else{
-        //localStorage.clear();
         console.log("usuario1 y usuario2: distinto de null");
         document.getElementById("usuario1").value=localStorage.getItem("usuario1");
         document.getElementById("apodo1").value=localStorage.getItem("apodo1");
@@ -45,9 +44,6 @@ function validaryguardar(jugador){
         else if (document.getElementById("apodo1").value == ""){
             alert ("Complete el Apodo");
         }
-
-       /*else if (document.getElementById("foto1").src.includes("assets/img/plataforma/user.png")) {
-            alert ("Proceda a sacarse la foto");}*/
 
         else{
 
@@ -82,9 +78,6 @@ function validaryguardar(jugador){
             alert ("Complete el Apodo");
         }
 
-      /* else if (document.getElementById("foto2").src.includes("assets/img/plataforma/user.png")) {
-            alert ("Proceda a sacarse la foto");}*/
-
         else{
 
             console.log("completa los datos y devuelve true");
@@ -98,13 +91,7 @@ function validaryguardar(jugador){
             localStorage.setItem("apodo2", apodo);
             localStorage.setItem("foto2", foto);
            
-           
-           
-            /*if(puntaje==null){
 
-                localStorage.setItem("puntajeglobal2", 0);
-                console.log("puntajeglobal2: " + puntaje);
-            }*/
             location.href="menu.html";
         }   
 

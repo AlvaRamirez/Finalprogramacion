@@ -152,8 +152,17 @@ position: fixed;
 }
 
 .container div.turn2:hover {
-    background-color: rgb(200, 235, 93);
+    background-color: rgb(93, 235, 235);
     transition: all 0.5s ease-out;
+}
+
+
+.container div.match1{
+    border:2px solid rgb(255, 169, 41);
+}
+
+.container div.match2{
+    border:2px solid rgb(93, 235, 235);
 }
 
 img {

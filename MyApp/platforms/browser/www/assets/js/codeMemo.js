@@ -115,14 +115,17 @@ function clickTile(divId) {
         click2 = ficha;
         div2 = divId;
         if (click1.valor === click2.valor) {
+            $("#"+div1).addClass("match"+(turn ? 1 : 2));
+            $("#"+div2).addClass("match"+(turn ? 1 : 2));
+
             turnsInARow++;
             //if the two tiles are the same
             console.log("IGUALES");
             pairsFound++;
             console.log("Pares encontrados: " + pairsFound + ". Pares totales: " + totalPairs);
             playerTurn.pairs++;
+           
             console.log("Pares J1: ", player1.pairs, "Pares J2: ", player2.pairs);
-           // playerTurn.points += turnsInARow * 100;
             console.log("Puntos J1: ", player1.points, "Puntos J2: ", player2.points);
            $("#points_jug1").text(JSON.stringify(player1.points));
            $("#points_jug2").text(JSON.stringify(player2.points));
@@ -279,6 +282,7 @@ function hover(id) {
         document.getElementById(id).classList.toggle("turn2", true);
     }
 }
+
 
 function areYouSure(){
     $("#msgBox").removeClass("none");

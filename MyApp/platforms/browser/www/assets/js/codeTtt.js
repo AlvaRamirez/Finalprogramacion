@@ -1,6 +1,4 @@
-function reinicio(){
-    location.href="menu.html";
-}
+
 
 var jugador1= localStorage.getItem("apodo1");
 var jugador2= localStorage.getItem("apodo2");
@@ -72,6 +70,7 @@ function actualizarPuntajes(){
 
 function loadLocalStorage(){
 
+   
    //localStorage.setItem('gameClean', 'true');
    //localStorage.setItem('clickTtt', 'true');
    //localStorage.removeItem('matrixPos');
@@ -389,7 +388,8 @@ function validateWin()
             scorettt [0]= scorettt [0] + 50;
             //loadLocalStorage.setItem();
             console.log( jugador1 + ": "+ scorettt [0]);
-            $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="restartGame(1)">Jugar de nuevo</button></div>');
+            $("#winner").append('<div><p>¡' + jugador1 + ' gana!</p><button onclick="actualizarPuntajes();restartGame(1)">Salir</button><button onclick="restartGame(1)">Jugar de nuevo</button></div>');
+
         }
         else
         {
@@ -397,7 +397,8 @@ function validateWin()
             //scorettt[1]=JSON.stringify(scorettt[1]);
             console.log( jugador2 +  ": " + scorettt [1]);
             changePlayer();
-            $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="javascript:$(\'#winner\').remove()">Ver el tablero</button><button onclick="restartGame(1)">Jugar de nuevo</button></div>');
+            $("#winner").append('<div><p>¡' + jugador2 + ' gana!</p><button onclick="actualizarPuntajes();restartGame(1)">Salir</button><button onclick="restartGame(1)">Jugar de nuevo</button></div>');
+
         }
         $("#handPlayer").remove();
         noOneIsClickable();
